@@ -20,6 +20,11 @@ namespace MCD_SystemIOFileIslemleri
             //{
             //    FileCreate("c:\\Network Akademi\\merhaba.txt");
             //}
+
+            FileAppendText("c:\\Network Akademi\\merhaba.txt", "Merhaba txt");
+            string textValue = FileReadAllText("c:\\Network Akademi\\merhaba.txt");
+            Console.WriteLine(textValue);
+            
         }
         static void FileCreate(string path)
         {
@@ -30,6 +35,10 @@ namespace MCD_SystemIOFileIslemleri
         {
             string textValue = File.ReadAllText(path);
             return textValue;
+        }
+        static void FileAppendText(string path, string value)
+        {
+            File.AppendAllText(path, value);
         }
     }
 }
